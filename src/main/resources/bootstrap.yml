@@ -1,0 +1,21 @@
+# Properties active for ALL profiles:
+---
+# This 'name' of our application is important
+# as the config server typically has to serve up properties for many applictions:
+spring:
+  application:
+    name: config-client
+
+  cloud:
+    config:
+      uri: http://localhost:8001
+    stream:
+      default-binder: activemq
+      active:
+        binder:
+          host: tcp://localhost:61616
+          user: admin
+          password: admin
+
+  profiles:
+    active: dev
